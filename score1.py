@@ -35,7 +35,11 @@ class SteamMeeticUser:
                 if game.name == game2.name and game.playtime_forever > 0:
                     time_ratio = (game.playtime_forever - game2.playtime_forever)  / game.playtime_forever
                     if time_ratio >= -ratio_filtr and time_ratio <= ratio_filtr:
-                        result_games += [(game.name, game.playtime_forever, time_ratio)]
+                        try:
+                            time_recent = game2.playtime_2weeks
+                        except:
+                            time_recent = 0
+                        result_games += [(game.name, game2.playtime_forever, time_recent, time_ratio)]
         return result_games
 
     '''
@@ -44,21 +48,21 @@ class SteamMeeticUser:
     ratio_filtr est l'écart relatif que l'on permet sur la filtration des jeux
     pond_time est le coef que l'on attribue au temps de jeux (correspondre sur 2500 min de jeux est beaucoup plus pertinent que sur 25 min).
     '''
-    def score1(self, user_to_match, ratio_filtr=0.1, pond_time=1):
+    def score1(self, user_to_match, ratio_filtr=0.1, pond_time=1, pond_time_recent=0.5):
         good_games = self.games_corresponding(user_to_match, ratio_filtr)
         score = 0
-        for (game, time, ratio) in good_games:
-            score += pond_time * time
+        for (game, time, time_recent, ratio) in good_games:
+            score += pond_time * time + pond_time_recent * time_recent
         return (score, good_games)
         
     '''
     best_scores envoie la liste des users me correspondant le mieux, à partir d'une liste d'users
     '''
-    def best_scores(self, list_users, ratio_filtr=0.1, pond_time=1, nb_best=5):
+    def best_scores(self, list_users, ratio_filtr=0.1, pond_time=1, pond_time_recent=0.5, nb_best=5):
         nb_results = 0
         list_results = []
         for user in list_users:
-            (score, games) = self.score1(user, ratio_filtr, pond_time)
+            (score, games) = self.score1(user, ratio_filtr, pond_time, pond_time_recent)
             ind = nb_results - 1
             while ind >-1 and score > list_results[ind][1]:
                 ind = ind - 1
@@ -79,13 +83,13 @@ class SteamMeeticUser:
     '''
     best_scores_file envoie la liste des users me correspondant le mieux, à partir d'une liste d'users issue d'un fichier d'id
     '''
-    def best_scores_file(self, name_file_id, ratio_filtr=0.1, pond_time=1, nb_best=5):
+    def best_scores_file(self, name_file_id, ratio_filtr=0.1, pond_time=1, pond_time_recent=0.5, nb_best=5):
         nb_results = 0
         list_results = []
         file_id = open(name_file_id, "r")
         for ligne in file_id:
             user = steamapi.user.SteamUser(int(ligne))
-            (score, games) = self.score1(user, ratio_filtr, pond_time)
+            (score, games) = self.score1(user, ratio_filtr, pond_time, pond_time_recent)
             ind = nb_results - 1
             while ind >-1 and score > list_results[ind][1]:
                 ind = ind - 1
