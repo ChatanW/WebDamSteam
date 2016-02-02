@@ -43,16 +43,32 @@ class SteamMeeticUser:
     '''
     def games_corresponding(self, user_to_match):
         my_games = self.steamuser.games
+        my_games.sort(key = lambda game: game._id)
         try:
             its_games = user_to_match.games
         except:
             its_games = []
-        result_games = []
-        for game in my_games:
-            for game2 in its_games:
-                if game.name == game2.name and game.playtime_forever > 0:
-                   result_games += [(game.name, game.playtime_forever, self.palier(game), game2.playtime_forever, self.palier(game2))]
-        return result_games
+        its_games.sort(key = lambda game: game._id)
+        result_played_games = []
+        result_not_played_games = [] 
+        my_i = 0
+        its_i = 0
+        while my_i < len(my_games) and its_i < len(its_games): 
+            my_game = my_games[my_i]
+            its_game = its_games[its_i]
+            if my_game._id == its_game._id: 
+                if my_game.playtime_forever > 0 and its_game.playtime_forever > 0: 
+                    result_played_games += [(my_game.name, my_game.playtime_forever, self.palier(my_game), its_game.playtime_forever, self.palier(its_game))]
+                else: 
+                    result_not_played_games += [(my_game.name, my_game.playtime_forever, self.palier(my_game), its_game.playtime_forever, self.palier(its_game))]
+                my_i += 1
+                its_i += 1
+                continue 
+            if my_game._id < its_game._id: 
+                my_i += 1
+            else: 
+                its_i += 1
+        return (result_played_games, result_not_played_games) 
 
     ''' 
     palier_dist calcule la distance minimale entre les paliers d'un jeu, et renvoie un multiplicateur de score
@@ -85,7 +101,7 @@ class SteamMeeticUser:
     max_score est le score maximal que peut donner un jeu (si les paliers sont les mêmes)
     '''
     def score2(self, user_to_match, max_score=100):
-        good_games = self.games_corresponding(user_to_match)
+        (good_games, _) = self.games_corresponding(user_to_match)
         score = 0
         for (game, t1, p1, t2, p2) in good_games:
             score += max_score * self.palier_dist(p1, p2)
