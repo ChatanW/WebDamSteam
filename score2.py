@@ -1,4 +1,4 @@
-#coding: utf-8
+#-*- coding:Utf-8 -*-
 from __future__ import unicode_literals
 from __future__ import division
 import steamapi
@@ -103,7 +103,7 @@ class SteamMeeticUser:
     def score2(self, user_to_match, max_score=100):
         (good_games, _) = self.games_corresponding(user_to_match)
         score = 0
-        for (game, t1, p1, t2, p2) in good_games:
+        for (_, _, p1, _, p2) in good_games:
             score += max_score * self.palier_dist(p1, p2)
         return (score, good_games)
     
@@ -131,7 +131,11 @@ class SteamMeeticUser:
                     list_results = list_results[0:ind+1] + [(user, score, games)] + list_results[ind+1:nb_results - 1]
         return list_results
 
-
+    def score(self, user, max_score=100):
+        return self.best_scores([user], max_score).pop()
+    
+    def friendlist(self):
+        return self.steamuser.friends
 
     '''
     best_scores_file envoie la liste des users me correspondant le mieux, 
