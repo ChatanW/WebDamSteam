@@ -18,6 +18,9 @@ Le projet coté interface :
 	3) voir comment faire tourner du code python derrière
 	4) on affiche plus d'infos que celles utilisées par le score, genre temps de jeu récent, jeux non joués, ...
 	5) voir le score entre nous et l'un de nos potes
+	6) proposer de regarder la correspondance pour une liste de jeux restreinte
+	7) ça prend trop de place ,faire des trucs dépliants pour le détail des jeux
+	8) Après connexion on propose les choix suivants : meilleurs teamates parmi notre base de données, meilleurs teamates parmi les amis de l'user ou score avec un mec dont l'user connait l'id
 
 Utiliser l'api :
 	1) avoir une plus longue liste de joueurs (pour cela, tables de hachage)
