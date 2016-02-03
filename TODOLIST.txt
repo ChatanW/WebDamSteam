@@ -1,0 +1,31 @@
+TODO LIST du projet webdam
+
+Gestion du projet : 
+	1) compléter le readme du github
+
+Le projet coté programme :
+   	1) optimisation diverses, dont utilisation de tables de hachages
+	2) améliorer la fonction de score :
+		  3) prendre en compte le temps de jeu récent, en plus du temps de jeu global. EN FAIT NON
+	3) renvoyer d'autres réponses : 
+	   	  1)temps de jeu du teammate (et non le sien), lien vers son profile (cf. interface web)
+		  2)liste des jeux que vous avez tous les deux sans y avoir joué, pour les commencer ensemble !
+		  3) d'autres trucs, cf. interface
+
+Le projet coté interface :
+   	1) régler le problème d'accès à ma page perso crans
+	2) connexion via steam
+	3) voir comment faire tourner du code python derrière
+	4) on affiche plus d'infos que celles utilisées par le score, genre temps de jeu récent, jeux non joués, ...
+	5) voir le score entre nous et l'un de nos potes
+
+Utiliser l'api :
+	1) avoir une plus longue liste de joueurs (pour cela, tables de hachage)
+	2) faire des stats :
+	   	 1) nombre d'amis moyen
+		 2) nombre de jeux moyen
+		 3) nombre de temps de jeux moyen
+		 4) rapport moyen jeux joués / jeux possédés
+		 5) d'autres trucs selon les idées et le temps
+
+
