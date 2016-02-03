@@ -68,7 +68,9 @@ class SteamMeeticUser:
                 my_i += 1
             else: 
                 its_i += 1
-        return (result_played_games, result_not_played_games) 
+        result_played_games.sort(key = lambda x: -x[1])
+        result_not_played_games.sort(key = lambda x: -x[1]) #TODO: prendre le max de x[1] et x[3] ? 
+        return (result_played_games, result_not_played_games)
 
     ''' 
     palier_dist calcule la distance minimale entre les paliers d'un jeu, et renvoie un multiplicateur de score

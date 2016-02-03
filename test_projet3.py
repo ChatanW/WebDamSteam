@@ -9,6 +9,15 @@ steamapi.core.APIConnection(api_key="5BB69AE39C3B27011CE4CCDA8606F427")
 seya = steamapi.user.SteamUser(76561198060771978)
 seya_meetic = score2.SteamMeeticUser(seya)
 
+'''
+print(seya.games)
+'''
+'''
+print(seya.avatar)
+print(seya.avatar_full)
+print(seya.avatar_medium)
+'''
+'''
 fl = seya_meetic.friendlist() 
 
 res = []
@@ -18,6 +27,7 @@ res.sort(key = lambda x: x[1])
 
 for (name, score) in reversed(res): 
     print(name+" : "+str(score))
+'''
 '''
 def lol(x):
     for i in range(0,42): 

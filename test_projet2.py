@@ -15,7 +15,7 @@ seya = steamapi.user.SteamUser(76561198060771978)
 seya_meetic = score2.SteamMeeticUser(seya)
 
 
-seya_teammates = seya_meetic.best_scores_file("list_gens_id_3.txt",100,nb_best=7)
+seya_teammates = seya_meetic.best_scores_file("list_gens_id_2.txt",100,nb_best=7)
 for (user, score, games) in seya_teammates:
     print(user)
     print(score)
