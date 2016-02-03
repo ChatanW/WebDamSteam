@@ -4,7 +4,7 @@ from __future__ import division
 import score1
 import steamapi
 
-steamapi.core.APIConnection(api_key="75F43EA5FA862713704515E6904DA5FD")
+steamapi.core.APIConnection(api_key="5BB69AE39C3B27011CE4CCDA8606F427")
 
 '''
 me = steamapi.user.SteamUser(userurl="chatanw")

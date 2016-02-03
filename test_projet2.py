@@ -2,7 +2,7 @@
 import score2
 import steamapi
 
-steamapi.core.APIConnection(api_key="75F43EA5FA862713704515E6904DA5FD")
+steamapi.core.APIConnection(api_key="5BB69AE39C3B27011CE4CCDA8606F427")
 
 '''
 me = steamapi.user.SteamUser(userurl="chatanw")
@@ -15,7 +15,7 @@ seya = steamapi.user.SteamUser(76561198060771978)
 seya_meetic = score2.SteamMeeticUser(seya)
 
 
-seya_teammates = seya_meetic.best_scores_file("list_gens_id_2.txt",100,nb_best=7)
+seya_teammates = seya_meetic.best_scores_file("list_gens_id_3.txt",100,nb_best=7)
 for (user, score, games) in seya_teammates:
     print(user)
     print(score)
