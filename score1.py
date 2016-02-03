@@ -1,4 +1,4 @@
-#coding: utf-8
+#-*- coding:Utf-8 -*-
 from __future__ import unicode_literals
 from __future__ import division
 import steamapi
@@ -51,7 +51,7 @@ class SteamMeeticUser:
     def score1(self, user_to_match, ratio_filtr=0.1, pond_time=1, pond_time_recent=0.5):
         good_games = self.games_corresponding(user_to_match, ratio_filtr)
         score = 0
-        for (game, time, time_recent, ratio) in good_games:
+        for (_, time, time_recent, _) in good_games:
             score += pond_time * time + pond_time_recent * time_recent
         return (score, good_games)
         

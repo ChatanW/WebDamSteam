@@ -1,3 +1,4 @@
+#-*- coding:Utf-8 -*-
 import score2
 import steamapi
 

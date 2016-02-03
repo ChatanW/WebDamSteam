@@ -1,3 +1,4 @@
+#-*- coding:Utf-8 -*-
 import steamapi
 steamapi.core.APIConnection(api_key="75F43EA5FA862713704515E6904DA5FD")
 me = steamapi.user.SteamUser(userurl="chatanw")

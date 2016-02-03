@@ -1,4 +1,4 @@
-#coding: utf-8
+#-*- coding:Utf-8 -*-
 from __future__ import unicode_literals
 from __future__ import division
 import score1

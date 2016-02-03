@@ -1,4 +1,4 @@
-#coding: utf-8
+#-*- coding:Utf-8 -*-
 from __future__ import unicode_literals
 from __future__ import division
 import steamapi
@@ -104,5 +104,12 @@ for friend in my_friends:
 
 '''
 À partir de ce travail, il faut mettre des fonctions de "quel est mon meilleur teammate ?"
-En gros, quand quelqu'un s'incrit, on calcule le score de rapprochement entre lui est chaque membre déjà inscrit (cf. bdd en cours de création) et on prend les meilleurs. Ce score est calculé, en première approximation, en comptant le nombre de jeux sur lesquels ils ont joué quasiment autant de temps (non nul !). On pourra pondéré cela avec le temps de jeu (etre comptatible sur 25 minutes n'est pas hyper pertinent) puis, à voir (je suis pas encore bien convaincu et surtout ça pose des pb, donc dans un premier temps il faudra conserver la filtration et juste pondérer par le temps de jeu) avec l'inverse du "ratio" (et donc enlever la filtration par ratio). On pourra aussi filtrer par heures auquels les gens jouent, mais c'est plus compliqué/restreint (paramètre privé et donc pas toujours visible). On pourra aussi s'interesser au temps de jeux récents (pertinent !!!)
+En gros, quand quelqu'un s'incrit, on calcule le score de rapprochement entre lui est chaque membre déjà inscrit 
+(cf. bdd en cours de création) et on prend les meilleurs. Ce score est calculé, en première approximation, en comptant 
+le nombre de jeux sur lesquels ils ont joué quasiment autant de temps (non nul !). On pourra pondéré cela avec le temps 
+de jeu (etre comptatible sur 25 minutes n'est pas hyper pertinent) puis, à voir (je suis pas encore bien convaincu et 
+surtout ça pose des pb, donc dans un premier temps il faudra conserver la filtration et juste pondérer par le temps de jeu) 
+avec l'inverse du "ratio" (et donc enlever la filtration par ratio). On pourra aussi filtrer par heures auquels les gens jouent, 
+mais c'est plus compliqué/restreint (paramètre privé et donc pas toujours visible). On pourra aussi s'interesser au temps 
+de jeux récents (pertinent !!!)
 '''
