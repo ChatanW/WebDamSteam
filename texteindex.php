@@ -1,7 +1,8 @@
-header( 'content-type: text/html; charset=utf-8' );
+
 <div id="body_index">
 <div id="inscription_steam">
 <?php
+header( 'content-type: text/html; charset=utf-8' );
    //include("login_steam.php");
    require 'steamauth/steamauth.php' ;
 require 'scripts.php';
