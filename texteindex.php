@@ -19,7 +19,7 @@ if(!isset($_SESSION['steamid'])) {
   include ('steamauth/userInfo.php'); //To access the $steamprofile array
   //Protected content
   logoutbutton(); //Logout Button
-  $locale='fr_FR.UTF-8';
+  $locale='en_US.UTF-8';
   setlocale(LC_ALL,$locale);
   putenv('LC_ALL='.$locale);
   echo exec('locale charmap');
