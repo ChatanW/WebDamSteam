@@ -1,0 +1,195 @@
+/* ------------------------------------------------------------- */
+/* CSS for a chatanist site				            				 */
+/*												            	 */
+/* ------------------------------------------------------------- */
+
+/* ------------------------------------------------------------- */
+/* BODY								                             */
+/* ------------------------------------------------------------- */
+
+body
+{
+background-color:#ffffff;
+background:url(/site/graphics/logo.png) no-repeat;
+background-position: 5px 5px; /* rtl-review */
+margin: 0em;
+padding: 0 195px 0 195px; 
+font-family: sans-serif, 'trebuchet ms', 'lucida grande', 'lucida sans unicode', arial, helvetica, sans-serif;
+font-size:0.9em;
+}
+
+
+
+/* ------------------------------------------------------------ */
+/* HEADER														*/
+/* ------------------------------------------------------------ */
+
+#header {
+margin-left: -195px;  
+margin-right: -195px;
+}
+
+	/* ------------------------------------------------------------ */
+	/* Community login												*/
+	/* ------------------------------------------------------------ */
+	
+
+	#login {
+	position:absolute;
+	right:0.5em; /* rtl-review */
+	top:0.25em; 
+	font-size:0.8em;
+	z-index: 1000;
+	}
+
+	#login img {
+	float:right;
+	margin-right:0.3em;
+	}
+
+	#login div {
+	float:right;
+	}
+
+	#login strong {
+	float:right; 
+	}
+
+	#login a {
+	text-decoration: none;
+	color: #039;
+	padding: 0.15em 0em 0.15em 0em;
+	}
+
+	#login ul {
+	float:right;
+	margin:0;
+	padding:0;
+	}
+
+	#login ul li {
+	list-style: none;
+	width:100%;
+	position: relative;
+	margin-top:0;
+	padding:0;
+	}
+	#login ul li a {
+	display: block;
+	padding: 0 0 0 0.2em; /* rtl-review */
+	}
+	#login ul ul {
+	display: none;
+	width: 12em; /* Width to help Opera out */ /* rtl-review */
+	background:#ffffff;
+	}
+	#login ul li:hover ul {
+	display: block;
+	position: absolute;
+	margin: 0;
+	margin-left: 1em; 
+	padding: 0;
+	background:#ffffff;
+	overflow:visible;
+	border: 1px solid #000000;
+	border-top: 0;
+	}
+	#login ul li:hover ul ul {
+	display: none;
+	}
+	#login ul li:hover li {
+	float: none; 
+	border: 0;
+	}
+	#login ul li:hover li a {
+	border: 0;
+	background-image: url("/site/graphics/arrowright.png"); /* rtl-review */
+	background-repeat: no-repeat;
+	background-position: right center; /* rtl-review */
+	}
+	#login ul li li a:hover {
+	background-color: #8db3ff;
+	}
+	#login ul li ul li ul {
+	display: none;
+	position: absolute; /* rtl-review */
+	left: 10.6em; /* rtl-review */
+	top: 0;
+	border:0;
+	z-index:2;
+	}
+	#login ul ul ul li {
+	display: none;
+	border: 0;
+	}
+	#login ul ul li:hover ul {
+	display: block;
+	border: 1px solid #000000;
+	}
+	#login ul ul li:hover ul li {
+	display: block;
+	}
+	#login ul ul li:hover ul li a {
+	background-image: none;
+	}
+
+	/* ------------------------------------------------------------ */
+	/* Navigation bar												*/
+	/* ------------------------------------------------------------ */
+	
+
+	/* Main Menu */
+
+	#header ul{
+	clear:left;
+	float:left;
+	position:relative;
+	top:45px;
+	left:50%;
+	text-align:center;
+	padding:0em;
+	margin:0em;
+	z-index: 2;
+	}
+
+	#header ul li{
+	list-style: none outside none;
+	float:left;
+	position:relative;
+ 	right:50%;
+	min-width: 7em;
+	width: 7em;
+	text-align: center;
+	font-weight: bold;
+	font-size: 0.9em;
+	border: 1px solid #000000;
+	margin: 0em 0.15em 0em 0.15em;
+	padding: 0;
+	}
+	
+	#header ul li a 
+	{
+	display:block;
+	background: #c6d3ef;
+	text-decoration: none;
+	color: #039;
+	padding: 0.15em 0em 0.15em 0em;
+	
+	}
+
+	#header ul li.selected a {
+	background: #fda92a;
+	padding: 0.15em 0em 0.15em 0em;
+	color: #039;
+	
+	}
+
+	#header ul li.selected {
+	border-bottom: 1px solid #fda92a;
+	}
+
+	#header ul li.selected a {
+	background: #fda92a;
+	padding: 0.15em 0em 0.15em 0em;
+	color: #039;
+	}
