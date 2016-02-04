@@ -29,7 +29,7 @@ function best_community($user_id, $nb_file) {
     }
     elseif ($init==2) {
     $game = $my_results[$i];
-    echo utf8_decode('<li> '.$game); 
+    echo '<li> '.$game; 
     $init = $init + 1;
     }
     elseif ($init==3) {
