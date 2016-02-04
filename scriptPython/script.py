@@ -21,7 +21,13 @@ for (teamate, score, games) in result:
     print (teamate.id)
     print (score)
     for game in games:
-        print (game[0])
+        try:
+            print (game[0])
+        except:
+            try: 
+                print ("Ce nom de jeu est genant !!")
+            except:
+                print ("ohohoh")
         print (game[1])
         print (game[3])
     print ("##CHANGEMENT123321##")
