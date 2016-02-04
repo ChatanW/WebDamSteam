@@ -1,10 +1,47 @@
 
 <?php
 header( 'content-type: text/html; charset=utf-8' );
+function utf8_exec($cmd,&$output=null,&$return=null)
+{
+	//get current work directory
+	$cd = getcwd();
+
+	// on multilines commands the line should be ended with "\r\n"
+	// otherwise if unicode text is there, parsing errors may occur
+	$cmd = "@echo off
+	@chcp 65001 > nul
+	@cd \"$cd\"
+	".$cmd;
+
+
+	//create a temporary cmd-batch-file
+	//need to be extended with unique generic tempnames
+	$tempfile = 'php_exec.bat';
+	file_put_contents($tempfile,$cmd);
+
+	//execute the batch
+	exec("start /b ".$tempfile,$output,$return);
+
+	// get rid of the last two lin of the output: an empty and a prompt
+	array_pop($output);
+	array_pop($output);
+
+	//if only one line output, return only the extracted value
+	if(count($output) == 1)
+	{
+		$output = $output[0];
+	}
+
+	//delete the batch-tempfile
+	unlink($tempfile);
+
+	return $output;
+
+}
 function best_community($user_id, $nb_file) {
   $api_key = "5BB69AE39C3B27011CE4CCDA8606F427";
   echo exec('locale charmap');
-  exec ("python scriptPython/script.py ".$user_id." ".$nb_file, $my_results);
+  utf8_exec ("python scriptPython/script.py ".$user_id." ".$nb_file, $my_results);
   $init = 0;
   $phrase_change = "##CHANGEMENT123321##";
   for ($i = 0; $i < count($my_results); ++$i) {
@@ -48,7 +85,7 @@ function best_community($user_id, $nb_file) {
 
 function best_friends($user_id) {
   $api_key = "5BB69AE39C3B27011CE4CCDA8606F427";
-  exec ("python scriptPython/script_friends.py ".$user_id, $my_results);
+  utf8_exec ("python scriptPython/script_friends.py ".$user_id, $my_results);
   $init = 0;
   $phrase_change = "##CHANGEMENT123321##";
   for ($i = 0; $i < count($my_results); ++$i) {
