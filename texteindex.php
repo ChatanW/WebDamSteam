@@ -24,6 +24,10 @@ if(!isset($_SESSION['steamid'])) {
   echo '<form action="texteindex.php?gp=3" method="post"><input value="Grande communauté" type="submit" /> </form>';
   echo '<form action="texteindex.php?gp=f" method="post"><input value="Mes amis" type="submit" /> </form>';
   echo exec('locale charmap');
+  $locale='de_DE.UTF-8';
+  setlocale(LC_ALL,$locale);
+  putenv('LC_ALL='.$locale);
+  echo exec('locale charmap');
 
   
 }
