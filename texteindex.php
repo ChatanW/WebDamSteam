@@ -19,15 +19,14 @@ if(!isset($_SESSION['steamid'])) {
   include ('steamauth/userInfo.php'); //To access the $steamprofile array
   //Protected content
   logoutbutton(); //Logout Button
-  echo '<form action="texteindex.php?gp=1" method="post"><input value="Petite communauté" type="submit" /> </form>';
-  echo '<form action="texteindex.php?gp=2" method="post"><input value="Moyenne communauté" type="submit" /> </form>';
-  echo '<form action="texteindex.php?gp=3" method="post"><input value="Grande communauté" type="submit" /> </form>';
-  echo '<form action="texteindex.php?gp=f" method="post"><input value="Mes amis" type="submit" /> </form>';
-  echo exec('locale charmap');
   $locale='de_DE.UTF-8';
   setlocale(LC_ALL,$locale);
   putenv('LC_ALL='.$locale);
   echo exec('locale charmap');
+  echo '<form action="texteindex.php?gp=1" method="post"><input value="Petite communauté" type="submit" /> </form>';
+  echo '<form action="texteindex.php?gp=2" method="post"><input value="Moyenne communauté" type="submit" /> </form>';
+  echo '<form action="texteindex.php?gp=3" method="post"><input value="Grande communauté" type="submit" /> </form>';
+  echo '<form action="texteindex.php?gp=f" method="post"><input value="Mes amis" type="submit" /> </form>';
 
   
 }
