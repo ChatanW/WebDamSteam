@@ -23,6 +23,7 @@ if(!isset($_SESSION['steamid'])) {
   echo '<form action="texteindex.php?gp=2" method="post"><input value="Moyenne communauté" type="submit" /> </form>';
   echo '<form action="texteindex.php?gp=3" method="post"><input value="Grande communauté" type="submit" /> </form>';
   echo '<form action="texteindex.php?gp=f" method="post"><input value="Mes amis" type="submit" /> </form>';
+  echo exec('locale charmap');
 
   
 }
