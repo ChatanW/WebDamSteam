@@ -3,6 +3,7 @@
 header( 'content-type: text/html; charset=utf-8' );
 function best_community($user_id, $nb_file) {
   $api_key = "5BB69AE39C3B27011CE4CCDA8606F427";
+  echo exec('locale charmap');
   exec ("python scriptPython/script.py ".$user_id." ".$nb_file, $my_results);
   $init = 0;
   $phrase_change = "##CHANGEMENT123321##";
