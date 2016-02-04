@@ -1,3 +1,4 @@
+header( 'content-type: text/html; charset=utf-8' );
 <?php
 
 function best_community($user_id, $nb_file) {

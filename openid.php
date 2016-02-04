@@ -1,3 +1,4 @@
+header( 'content-type: text/html; charset=utf-8' );
 <?php
 /**
  * This class provides a simple interface for OpenID (1.1 and 2.0) authentication.

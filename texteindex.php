@@ -1,4 +1,4 @@
-
+header( 'content-type: text/html; charset=utf-8' );
 <div id="body_index">
 <div id="inscription_steam">
 <?php
