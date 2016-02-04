@@ -21,19 +21,9 @@ for (teamate, score, games) in result:
     print (teamate.id)
     print (score)
     for game in games:
-        try:
-            print (game[0])
-        except:
-            try: 
-                print ("Ce nom de jeu est con !!")
-            except:
-                print (" ")
-        try:
-            print (game[1])
-            print (game[3])
-        except:
-            print ("0")
-            print ("0")
+        print (game[0])
+        print (game[1])
+        print (game[3])
     print ("##CHANGEMENT123321##")
 #except:
 #    print "Problème dans le script"
