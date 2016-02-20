@@ -22,10 +22,10 @@ for (teamate, score, games) in result:
     print (score)
     for game in games:
         try:
-            print (game[0])
+            print ((game[0]).replace(u"\u2122", ''))
         except:
             try: 
-                print ("Ce nom de jeu est genant !!")
+                print ("Problème d'encodage... Merci php !")
             except:
                 print ("ohohoh")
         print (game[1])
