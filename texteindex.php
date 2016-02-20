@@ -48,7 +48,9 @@ if (isset ($_GET['gp'])) {
    <div id="texte_index">
    <h1> Viens découvrir tes meilleurs teammates ! </h1>
    
-   Bienvenue sur ce site de rencontre pour gamers. Tu n'es pas là que pour choper mais pour découvrir des personnes avec qui tu pourra jouer sereinement. On te donnera la liste des jeux pour lesquels vos niveaux semblent similaires et meme ceux que vous possédez tous les deux en attendant de les commencer ensemble.
+   Bienvenue sur ce site de rencontre pour gamers. 
+   Si tu cherches des compagnons de jeu ayant les mêmes goûts que toi, tu es au bon endroit ! 
+   Nous t'aiderons à trouver des joueurs qui semblent aimer les mêmes jeux que toi :)
    
 
    </div>
