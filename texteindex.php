@@ -22,7 +22,7 @@ if(!isset($_SESSION['steamid'])) {
   $locale='en_US.UTF-8';
   setlocale(LC_ALL,$locale);
   putenv('LC_ALL='.$locale);
-  echo exec('locale charmap');
+  //echo exec('locale charmap');
   echo '<form action="texteindex.php?gp=1" method="post"><input value="Petite communauté" type="submit" /> </form>';
   echo '<form action="texteindex.php?gp=2" method="post"><input value="Moyenne communauté" type="submit" /> </form>';
   echo '<form action="texteindex.php?gp=3" method="post"><input value="Grande communauté" type="submit" /> </form>';
