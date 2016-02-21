@@ -71,7 +71,8 @@ function best_friends($user_id) {
     }
     elseif ($init==1) {
       $score = $my_results[$i];
-      echo '   Tu as un score de '.$score.' en ce qui concerne la correspondance entre toi et '.$name_teamate.' et voici les jeux auxquels vous pouvez jouer ensemble : <ul>'. nl2br("\r\n");
+      echo 'Teammate potentiel : '.$name_teamate.' (score : '.$score.'). Jeux en commun : ';
+      //echo '   Tu as un score de '.$score.' en ce qui concerne la correspondance entre toi et '.$name_teamate.' et voici les jeux auxquels vous pouvez jouer ensemble : <ul>'. nl2br("\r\n");
       $init = $init + 1;
     }
     elseif ($init==2) {
@@ -81,12 +82,14 @@ function best_friends($user_id) {
     }
     elseif ($init==3) {
       $my_time = $my_results[$i];
-      echo ', tu y as joué '.$my_time.' minutes ';
+      echo 'Ton temps de jeu : '.$my_time.' min. ';
+      //echo ', tu y as joué '.$my_time.' minutes ';
       $init = $init + 1;
     }
     elseif ($init==4) {
       $his_time = $my_results[$i];
-      echo 'et lui '.$his_time.' minutes. '.' </li> '.nl2br("\r\n");
+      echo 'Son temps de jeu : '.$his_time.' min. '.' </li> '.nl2br("\r\n");
+      //echo 'et lui '.$his_time.' minutes. '.' </li> '.nl2br("\r\n");
       $init = 2;
     }
   }
