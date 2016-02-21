@@ -34,14 +34,14 @@ function best_community($user_id, $nb_file) {
     $init = $init + 1;
     }
     elseif ($init==3) {
-      $my_time = $my_results[$i];
-      echo 'Ton temps de jeu : '.$my_time.' min. ';
+      $my_time = $my_results[$i] / 60;
+      echo ' Ton temps de jeu : '.$my_time.' heures. ';
       //echo ', tu y as joué '.$my_time.' minutes ';
       $init = $init + 1;
     }
     elseif ($init==4) {
-      $his_time = $my_results[$i];
-      echo 'Son temps de jeu : '.$his_time.' min. '.' </li> '.nl2br("\r\n");
+      $his_time = $my_results[$i] / 60;
+      echo 'Son temps de jeu : '.$his_time.' heures. '.' </li> '.nl2br("\r\n");
       //echo 'et lui '.$his_time.' minutes. '.' </li> '.nl2br("\r\n");
       $init = 2;
     }
@@ -81,14 +81,14 @@ function best_friends($user_id) {
     $init = $init + 1;
     }
     elseif ($init==3) {
-      $my_time = $my_results[$i];
-      echo 'Ton temps de jeu : '.$my_time.' min. ';
+      $my_time = $my_results[$i] / 60;
+      echo ' Ton temps de jeu : '.$my_time.' heures. ';
       //echo ', tu y as joué '.$my_time.' minutes ';
       $init = $init + 1;
     }
     elseif ($init==4) {
-      $his_time = $my_results[$i];
-      echo 'Son temps de jeu : '.$his_time.' min. '.' </li> '.nl2br("\r\n");
+      $his_time = $my_results[$i] / 60;
+      echo 'Son temps de jeu : '.$his_time.' heures. '.' </li> '.nl2br("\r\n");
       //echo 'et lui '.$his_time.' minutes. '.' </li> '.nl2br("\r\n");
       $init = 2;
     }
