@@ -1,0 +1,205 @@
+\documentclass[10pt]{beamer}
+\usetheme{Warsaw}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{listings}
+%\usepackage{enumitem}
+%\usepackage{tikz}
+\usepackage{placeins}
+\usepackage{hyperref}
+
+%opening
+\title{Adopte un teammate ! }
+\author{Maxime Morgado et Anthony Lick}
+
+\begin{document}
+
+\begin{frame}
+ \maketitle
+\end{frame}
+
+\begin{frame}
+\frametitle{Genèse du projet}
+\begin{block}{Genèse du projet}
+\begin{itemize}
+ \item Comment trouver de nouveaux équipiers aimant les mêmes jeux que nous ?
+ \item Utiliser le même principe que les sites de rencontre 
+ \pause \item Steam : beaucoup de jeux, beaucoup d'utilisateurs, API.
+ \pause \item Quels critères utiliser ? 
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Steam API}
+ 
+\begin{block}{À quelles données a-t-on accès ?}
+  \visible<2-> {
+  \begin{itemize}
+   \item liste des jeux
+   \item liste des amis
+   \item temps de jeu 
+   \item ...
+  \end{itemize}
+  }
+\end{block}
+\begin{block}{À quelles données n'a-t-on pas accès ?}
+  \visible<3-> {
+  \begin{itemize}
+   \item Certaines données propres à chaque jeu (ranking)
+   \item Données privées chez certains utilisateurs 
+  \end{itemize}
+  }
+\end{block}
+\begin{block}{Implémentation de l'API ?}
+  \visible<4-> {
+  \begin{itemize}
+   \item Python
+   \item php
+  \end{itemize}
+  }
+\end{block}
+ 
+\end{frame}
+
+\begin{frame}
+ \frametitle{Les critères pour trouver un bon coéquipier}
+ 
+ \begin{block}{But}
+ Trouver quelqu'un avec
+ \begin{itemize}
+  \item les mêmes goûts vidéoludiques
+  \item le même niveau sur les jeux en question
+  \item des horaires compatibles
+ \end{itemize}
+ \end{block}
+ 
+ \begin{block}{Idées}
+  \begin{itemize}
+   \item Regarder les jeux en commun.
+   \item Utiliser les systèmes de ranking internes à certains jeux. 
+   \item Utiliser le temps de jeu. 
+   \item Utiliser les achievements et les badges. 
+   \item Utiliser la localisation. 
+  \end{itemize}
+
+ \end{block}
+ 
+\end{frame}
+
+\begin{frame}
+ \frametitle{Comparaison des temps de jeu}
+ 
+ \begin{block}{But}
+  Créer un score de compatibilité à partir des temps de jeu. 
+ \end{block}
+ 
+ \only<2-3>{
+ \begin{block}{Première idée}
+  Filtrage brut des jeux en fonction de l'écart relatif. 
+  \only<3> {
+  \begin{itemize}
+   \item N'a pas beaucoup de sens pour les jeux avec peu d'heures de jeu. 
+   \item N'a pas beaucoup de sens pour les jeux avec beaucoup d'heures de jeu. 
+   \item Trop binaire
+  \end{itemize}
+  }
+ \end{block}
+ }
+
+ \only<4->{
+ \begin{block}{Deuxième idée}
+  Utiliser un système de paliers pour représenter les différents niveaux des joueurs, en fonction du temps de jeu. 
+  \begin{itemize}
+  \item[]
+  \begin{itemize}
+   \item[0] Jeu acheté, mais jamais joué. 
+   \item[0-15] Solo \& Multijoueur : Joueur débutant. 
+   \item[8-60] Solo : Joueur aguéri. Multijoueur : Joueur débutant.
+   \item[40-120] Solo : Mode histoire terminé. Multijoueur : Joueur moyen. 
+   \item[90-550] Solo : Modeur. Multijoueur : Bon joueur. 
+   \item[500-1200] Multijoueur : Haut niveau. 
+   \item[800-$\infty$] Multijoueur : Très haut niveau. 
+  \end{itemize}
+  \end{itemize}
+ \end{block}
+ }
+ 
+\end{frame}
+
+\begin{frame}
+ \frametitle{Communauté de test} 
+ \begin{block}{Communauté de test}
+ \begin{itemize}
+  \item Récolter une liste d'utilisateurs pour faire des tests. 
+  \item Parcours en largeur du graphe des amis Steam (modulo les données privées). 
+ \end{itemize}
+ Cette liste d'utilisateurs servira aussi à simuler la liste des utilisateurs de notre site. 
+ \end{block}
+
+\end{frame}
+
+\begin{frame}
+ \frametitle{Création du site Web}
+ 
+ \begin{block}{Interface Web}
+  \begin{itemize}
+   \item Permet de faire tester notre projet à des amis.
+   \item Accès aux profils des coéquipiers trouvés.
+   \item Appeler les scripts Python avec PHP. 
+   \begin{itemize}
+    \item Problèmes d'encodage (PHP et UTF-8). 
+   \end{itemize}
+   \item Authentification à Steam ? 
+   \begin{itemize}
+    \item Utilisation d'OpenId. 
+   \end{itemize}
+  \item Différents tests possibles :
+  \begin{itemize}
+   \item 3 communautés de taille différentes. 
+   \item tester l'algorithme sur sa liste d'amis. 
+  \end{itemize}
+  \end{itemize}
+ \end{block}
+
+\end{frame}
+
+\begin{frame}
+ \frametitle{Conclusion}
+ 
+ \begin{block}{Ce qu'il resterait à faire}
+  \begin{itemize}
+   \item Utiliser d'autres critères : 
+   \begin{itemize}
+    \item Localisation.
+   \end{itemize}
+   \item Faire des demandes personnalisées : 
+    \begin{itemize}
+    \item Création d'un profil.
+    \item Ajouts de jeux absents sur Steam.
+    \item Choisir les jeux qui nous intéresse le plus.
+    \end{itemize}
+  \item Réponses plus personnalisées :
+  \begin{itemize}
+   \item Jeux du palier $0$ en commun.
+  \end{itemize}
+  \item Amélioration du temps de calcul :
+  \begin{itemize}
+   \item Précalcul quotidien en faisant des bases de données.
+  \end{itemize}
+
+  \end{itemize}
+  
+ \end{block}
+ 
+ Site Web : \url{http://perso.crans.org/morgado/}
+
+\end{frame}
+
+
+\end{document}
