@@ -1,0 +1,51 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{listings}
+%\usepackage{enumitem}
+%\usepackage{tikz}
+\usepackage{placeins}
+\usepackage{hyperref}
+
+%opening
+\title{Rapport du projet de Web Data Managment.}
+\author{Maxime Morgado et Anthony Lick}
+
+\begin{document}
+
+\maketitle
+
+\section{Présentation du projet}
+
+Notre projet a consisté à réaliser un site de rencontres pour gamers, permettant à des utilisateurs Steam de trouver de nouveaux coéquipiers. 
+Pour cela, nous avons utilisé l'API Steam, son implémentation en Python et en PHP. 
+Nous avons aussi créé une interface Web, accessible à l'adresse suivante : \url{http://perso.crans.org/morgado/}. 
+
+\section{Présentation des fichiers du projet}
+
+\subsection{Dossier scriptPython}
+
+\subsubsection{Fichiers tests de l'API}
+
+Les fichiers test.py, test2.py, test3.py contiennent les premiers tests concernant l'API. 
+En particulier, le fichier test.py contient la fonction qui crée une communauté de test. 
+
+\subsubsection{Nos algorithmes}
+
+Notre première approche, avec un filtrage brut, est implémentée dans score1.py et il est possible de la tester avec test\_projet.py. 
+Notre seconde approche, avec les paliers, est implémentée dans score2.py, il est possible de la tester avec test\_projet2.py et test\_projet3.py. 
+Les scripts utilisés par notre site Web, basés sur score2.py, sont contenus dans les fichiers script.py et scrip\_friends.py. 
+En particulier, le fichier test\_projet2.py peut être utilisé (et modifié) pour tester notre algorithme sans passer par l'interface Web. 
+Dans ce cas, on peut obtenir l'ID d'un utilisateur à l'aide du site suivant : \url{https://steamid.io/} (utiliser le champ \textbf{steamID64} fourni par ce site). 
+
+\subsection{Fichiers PHP}
+
+La racine du dossier contient les fichiers PHP implémentant notre site Web. Notamment, le fichier script.php appelle les scripts python et affiche les résultats, 
+le fichier texteindex.php permet de se connecter à Steam via OpenId. 
+
+\end{document}
