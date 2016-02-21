@@ -24,7 +24,7 @@ function best_community($user_id, $nb_file) {
     }
     elseif ($init==1) {
       $score = $my_results[$i];
-      echo 'Teammate potentiel : '.$name_teamate.' (score : '.$score.')'. nl2br("\r\n") .'Jeux en commun : <ul> ';
+      echo ' (score : '.$score.')'. nl2br("\r\n") .'Jeux en commun : <ul> ';
       //echo '   Tu as un score de '.$score.' en ce qui concerne la correspondance entre toi et '.$name_teamate.' et voici les jeux auxquels vous pouvez jouer ensemble : <ul>'. nl2br("\r\n");
       $init = $init + 1;
     }
@@ -71,7 +71,7 @@ function best_friends($user_id) {
     }
     elseif ($init==1) {
       $score = $my_results[$i];
-      echo 'Teammate potentiel : '.$name_teamate.' (score : '.$score.')'. nl2br("\r\n") .'Jeux en commun : <ul>';
+      echo ' (score : '.$score.')'. nl2br("\r\n") .'Jeux en commun : <ul>';
       //echo '   Tu as un score de '.$score.' en ce qui concerne la correspondance entre toi et '.$name_teamate.' et voici les jeux auxquels vous pouvez jouer ensemble : <ul>'. nl2br("\r\n");
       $init = $init + 1;
     }
